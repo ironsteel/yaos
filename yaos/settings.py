@@ -121,6 +121,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'yaos_auth',
+    'yaos_home',
+    'yaos_products',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
