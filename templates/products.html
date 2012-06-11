@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% if products %}
+    <p>All Products</p>
+    <ul>
+        {% for product in products %}
+        <li>
+            <p>{{ product.name }}</p>
+        </li>
+        {% endfor %}
+{% else %}
+    <p>No products</p>
+{% endif %}
+
+
+{% endblock %}
