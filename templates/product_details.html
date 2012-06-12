@@ -11,19 +11,21 @@
                      <a href="#" title="header=[Zoom] body=[&nbsp;] fade=[on]"><img src="{{ product.image_file.image.url }}" alt="" title="" border="0" /></a>
                  </div>
                      <div class="details_big_box">
-                         <div class="product_title_big">My Cinema-U3000/DVBT, USB 2.0 TV BOX External, White</div>
+                         <div class="product_title_big">{{ product.name }}</div>
                          <div class="specifications">
-                            Disponibilitate: <span class="blue">In stoc</span><br />
+                             Availability: <span class="blue">{{ product.availability }}</span><br />
 
-                            Garantie: <span class="blue">24 luni</span><br />
+                             Description: <span class="blue">{{ product.description }}</span><br />
                             
-                            Tip transport: <span class="blue">Mic</span><br />
+                             Brand: <span class="blue">{{ product.brand }}</span><br />
+                             
+                             Published on: <span class="blue">{{ product.pub_date }}</span><br />
                             
-                            Pretul include <span class="blue">TVA</span><br />
                          </div>
-                         <div class="prod_price_big"><span class="price">Price: {{ product.price}}$</span></div>
+                         <div class="prod_price_big"><span class="price">Price: {{ product.price }}$</span></div>
                          
                 {% if is_logged %}
+                {% if product.availability > 0 %}
                 <form name="add{{ product.id }}" action="/products/add_to_cart/" method="POST">
                     {% csrf_token %}
                     <a href="javascript: submitform()"><img src="{{ STATIC_URL }}/images/cart.gif" alt="" title="" border="0" class="addtocart" />add to cart</a>
@@ -35,6 +37,7 @@
                         document.add{{ product.id }}.submit();
                     }
                 </script>
+                {% endif %}
                 {% endif %}
                      </div>                        
             </div>

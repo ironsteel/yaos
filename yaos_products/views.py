@@ -23,6 +23,8 @@ def add_to_cart(request):
         buyer = get_object_or_404(User, pk=request.POST['id_of_user'])
         cart_item = ShoppingCart(user=buyer, product=product_to_add)
         cart_item.save()
+        product_to_add.availability = product_to_add.availability - 1
+        product_to_add.save()
         return HttpResponseRedirect("/") 
 
 @login_required(login_url='/accounts/login')
@@ -34,6 +36,9 @@ def ordered_products(request):
 def remove_from_cart(request):
     if request.method == 'POST':
         to_remove = get_object_or_404(ShoppingCart, pk=request.POST['id_of_cart_item'])
+        prod = to_remove.product
         to_remove.delete()
+        prod.availability = prod.availability + 1
+        prod.save()
         return HttpResponseRedirect("/products/incart") 
 
