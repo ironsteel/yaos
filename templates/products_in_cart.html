@@ -14,6 +14,17 @@
             <div class="bottom_prod_box"></div>             
             <div class="prod_details_tab">
             <a href="/products/{{ cart_item.product.id }}" class="prod_details">details</a>            
+            <form name="delete{{ cart_item.id }}" action="/products/delete_from_cart/" method="POST">
+                    {% csrf_token %}
+                    <a href="javascript: submitform()" class="prod_details">del</a>
+                    <input type="hidden" name="id_of_cart_item" value="{{ cart_item.id }}">
+                    <input type="hidden" name="id_of_user" value="{{ current_user.id }}">
+                </form>
+                <script type="text/javascript">
+                    function submitform() {
+                        document.delete{{ cart_item.id}}.submit();
+                    }
+                </script>
             </div>                     
         </div>
         {% endfor %}

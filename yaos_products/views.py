@@ -27,4 +27,9 @@ def ordered_products(request):
     user_products = ShoppingCart.objects.filter(user__id=request.user.id)
     return render_to_response('products_in_cart.html', add_common_vars(request, {'cart_items': user_products, } ), context_instance=RequestContext(request))
     
+def remove_from_cart(request):
+    if request.method == 'POST':
+        to_remove = get_object_or_404(ShoppingCart, pk=request.POST['id_of_cart_item'])
+        to_remove.delete()
+        return HttpResponseRedirect("/products/incart") 
 
