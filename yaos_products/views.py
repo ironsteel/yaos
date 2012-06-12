@@ -22,5 +22,9 @@ def add_to_cart(request):
         cart_item = ShoppingCart(user=buyer, product=product_to_add)
         cart_item.save()
         return HttpResponseRedirect("/") 
-        
+
+def ordered_products(request):
+    user_products = ShoppingCart.objects.filter(user__id=request.user.id)
+    return render_to_response('products_in_cart.html', add_common_vars(request, {'cart_items': user_products, } ), context_instance=RequestContext(request))
+    
 

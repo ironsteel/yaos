@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% if cart_items %}
+   	<div class="center_title_bar">Products In Shopping Cart</div>
+        {% for cart_item in cart_items %}
+    	<div class="prod_box">
+        	<div class="top_prod_box"></div>
+            <div class="center_prod_box">            
+                <div class="product_title"><a href="/products/{{ cart_item.product.id }}">{{ cart_item.product.name }}</a></div>
+                <div class="product_img"><a href="/products/{{ cart_item.product.id }}"><img src="{{ cart_item.product.image_file.image.url }}" alt="" title="" border="0" /></a></div>
+                <div class="prod_price"><span class="price">{{ cart_item.product.price }}$</span></div>                        
+            </div>
+            <div class="bottom_prod_box"></div>             
+            <div class="prod_details_tab">
+            <a href="/products/{{ cart_item.product.id }}" class="prod_details">details</a>            
+            </div>                     
+        </div>
+        {% endfor %}
+    </div> 
+{% else %}
+    <p>No products</p>
+{% endif %}
+
+
+{% endblock %}

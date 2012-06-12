@@ -6,4 +6,5 @@ urlpatterns = patterns('',
         url(r'^all', all_products),
         url(r'^(?P<product_id>\d+)/$', product_details),
         url(r'^add_to_cart', add_to_cart),
+        url(r'^incart', ordered_products),
 )
