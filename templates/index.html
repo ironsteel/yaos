@@ -128,6 +128,7 @@
    </div><!-- end of center content -->
    
    <div class="right_content">
+       {% if is_logged %}
    		<div class="shopping_cart">
         	<div class="cart_title">Shopping cart</div>
             
@@ -140,7 +141,7 @@
             <div class="cart_icon"><a href="#" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img src="{{ STATIC_URL }}/images/shoppingcart.png" alt="" title="" width="48" height="48" border="0" /></a></div>
         
         </div>
-   
+       {% endif %} 
    
      
      
