@@ -5,6 +5,7 @@ from PIL import Image
 import os
 import tempfile
 from django.core.files.base import File
+from django.contrib.auth.models import User
 
 class Picture(models.Model):
     name = models.CharField(max_length=200)
@@ -38,4 +39,7 @@ class Product(models.Model):
     def __unicode__(self):
         return self.name
 
+class ShoppingCart(models.Model):
+    user = models.ForeignKey(User)
+    product = models.ForeignKey(Product)
 
