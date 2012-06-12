@@ -32,6 +32,8 @@ class Product(models.Model):
     availability = models.IntegerField()
     image_file = models.ForeignKey(Picture)
     price = models.FloatField()
+    pub_date = models.DateTimeField('date published')
+
     
     def __unicode__(self):
         return self.name
