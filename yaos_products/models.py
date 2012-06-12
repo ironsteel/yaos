@@ -14,6 +14,7 @@ class Product(models.Model):
     brand = models.CharField(max_length=50)
     description = models.TextField()
     availability = models.IntegerField()
+    image_file = models.ImageField(upload_to="images")
     
     def __unicode__(self):
         return self.name

@@ -2,13 +2,24 @@
 
 {% block content %}
 {% if products %}
-    <p>All Products</p>
-    <ul>
+   	<div class="center_title_bar">All Products</div>
         {% for product in products %}
-        <li>
-            <p>{{ product.name }}</p>
-        </li>
+    	<div class="prod_box">
+        	<div class="top_prod_box"></div>
+            <div class="center_prod_box">            
+                <div class="product_title"><a href="details.html">{{ product.name }}</a></div>
+                <p>{{ product.image_file.url }}</p>
+                <div class="product_img"><a href="details.html"><img src="{{ product.image_file.url }}" alt="" title="" border="0" /></a></div>
+                 <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>                        
+            </div>
+            <div class="bottom_prod_box"></div>             
+            <div class="prod_details_tab">
+            <a href="#" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="{{ STATIC_URL }}/images/cart.gif" alt="" title="" border="0" class="left_bt" /></a>
+            <a href="details.html" class="prod_details">details</a>            
+            </div>                     
+        </div>
         {% endfor %}
+    </div> 
 {% else %}
     <p>No products</p>
 {% endif %}
