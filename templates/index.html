@@ -133,9 +133,9 @@
         	<div class="cart_title">Shopping cart</div>
             
             <div class="cart_details">
-            3 items <br />
+                {{ products_in_cart }} items <br />
             <span class="border_cart"></span>
-            Total: <span class="price">350$</span>
+            Total: <span class="price">{{ total }}$</span>
             </div>
             
             <div class="cart_icon"><a href="#" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img src="{{ STATIC_URL }}/images/shoppingcart.png" alt="" title="" width="48" height="48" border="0" /></a></div>
