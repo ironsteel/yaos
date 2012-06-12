@@ -42,4 +42,5 @@ class Product(models.Model):
 class ShoppingCart(models.Model):
     user = models.ForeignKey(User)
     product = models.ForeignKey(Product)
-
+    def __unicode__(self):
+        return self.product.name;

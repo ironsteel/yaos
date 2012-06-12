@@ -13,7 +13,19 @@
             </div>
             <div class="bottom_prod_box"></div>             
             <div class="prod_details_tab">
-            <a href="#" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="{{ STATIC_URL }}/images/cart.gif" alt="" title="" border="0" class="left_bt" /></a>
+                {% if is_logged %}
+                <form name="add" action="/products/add_to_cart/" method="POST">
+                    {% csrf_token %}
+                    <a href="javascript: submitform()"><img src="{{ STATIC_URL }}/images/cart.gif" alt="" title="" border="0" class="left_bt" /></a>
+                    <input type="hidden" name="id_of_product" value="{{ product.id }}">
+                    <input type="hidden" name="id_of_user" value="{{ current_user.id }}">
+                </form>
+                <script type="text/javascript">
+                    function submitform() {
+                        document.add.submit();
+                    }
+                </script>
+                {% endif %}
             <a href="/products/{{ product.id }}" class="prod_details">details</a>            
             </div>                     
         </div>
