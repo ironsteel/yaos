@@ -23,8 +23,9 @@ def add_to_cart(request):
         buyer = get_object_or_404(User, pk=request.POST['id_of_user'])
         cart_item = ShoppingCart(user=buyer, product=product_to_add)
         cart_item.save()
-        product_to_add.availability = product_to_add.availability - 1
-        product_to_add.save()
+        if product_to_add.availability > 0:
+            product_to_add.availability = product_to_add.availability - 1
+            product_to_add.save()
         return HttpResponseRedirect("/") 
 
 @login_required(login_url='/accounts/login')
