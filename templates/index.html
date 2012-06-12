@@ -70,61 +70,6 @@
    <div class="center_content">
        {% block content %}
        {% endblock %}
-   	<!--<div class="center_title_bar">Latest Products</div>
-    
-    	<div class="prod_box">
-        	<div class="top_prod_box"></div>
-            <div class="center_prod_box">            
-                 <div class="product_title"><a href="details.html">Motorola 156 MX-VL</a></div>
-                 <div class="product_img"><a href="details.html"><img src="{{ STATIC_URL }}/images/laptop.gif" alt="" title="" border="0" /></a></div>
-                 <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>                        
-            </div>
-            <div class="bottom_prod_box"></div>             
-            <div class="prod_details_tab">
-            <a href="#" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="{{ STATIC_URL }}/images/cart.gif" alt="" title="" border="0" class="left_bt" /></a>
-            <a href="details.html" class="prod_details">details</a>            
-            </div>                     
-        </div>
-    
-    
- 
-    
-   	<div class="center_title_bar">Motorola 156 MX-VL</div>
-    
-    	<div class="prod_box_big">
-        	<div class="top_prod_box_big"></div>
-            <div class="center_prod_box_big">            
-                 
-                 <div class="product_img_big">
-                     <a href="javascript:popImage('{{ STATIC_URL }}/images/big_pic.jpg','Some Title')" title="header=[Zoom] body=[&nbsp;] fade=[on]"><img src="{{ STATIC_URL }}/images/laptop.gif" alt="" title="" border="0" /></a>
-                 <div class="thumbs">
-                 <a href="#" title="header=[Thumb1] body=[&nbsp;] fade=[on]"><img src="{{ STATIC_URL }}/images/thumb1.gif" alt="" title="" border="0" /></a>
-                 <a href="#" title="header=[Thumb2] body=[&nbsp;] fade=[on]"><img src="{{ STATIC_URL }}/images/thumb1.gif" alt="" title="" border="0" /></a>
-                 <a href="#" title="header=[Thumb3] body=[&nbsp;] fade=[on]"><img src="{{ STATIC_URL }}/images/thumb1.gif" alt="" title="" border="0" /></a>
-                 </div>
-                 </div>
-                     <div class="details_big_box">
-                         <div class="product_title_big">My Cinema-U3000/DVBT, USB 2.0 TV BOX External, White</div>
-                         <div class="specifications">
-                            Disponibilitate: <span class="blue">In stoc</span><br />
-
-                            Garantie: <span class="blue">24 luni</span><br />
-                            
-                            Tip transport: <span class="blue">Mic</span><br />
-                            
-                            Pretul include <span class="blue">TVA</span><br />
-                         </div>
-                         <div class="prod_price_big"><span class="reduce">350$</span> <span class="price">270$</span></div>
-                         
-                         <a href="#" class="addtocart">add to cart</a>
-                     </div>                        
-            </div>
-            <div class="bottom_prod_box_big"></div>                                
-        </div>
- 
-        -->
- 
- 
    </div><!-- end of center content -->
    
    <div class="right_content">
@@ -138,7 +83,7 @@
             Total: <span class="price">{{ total }}$</span>
             </div>
             
-            <div class="cart_icon"><a href="#" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img src="{{ STATIC_URL }}/images/shoppingcart.png" alt="" title="" width="48" height="48" border="0" /></a></div>
+            <div class="cart_icon"><a href="/products/incart" title="Show products in Cart"><img src="{{ STATIC_URL }}/images/shoppingcart.png" alt="" title="" width="48" height="48" border="0" /></a></div>
         
         </div>
        {% endif %} 
