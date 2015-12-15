@@ -1,0 +1,18 @@
+# vim: set ts=2 sw=2 sts=2 et :
+yaos:
+  build: .
+  restart: always
+  environment:
+    - LANG="en_US.UTF-8"
+  ports:
+    - "8000:8000"
+  links:
+    - db
+
+db:
+  image: mysql 
+  volumes: 
+    - "/yaos/db:/var/lib/mysql"
+  environment:
+    - MYSQL_ROOT_PASSWORD="alabala"
+    - MUSQL_DATABASE="yaos"
